@@ -1,0 +1,45 @@
+@media (max-width:1200px) {
+    .advantages {
+    }
+}
+
+@media (max-width: 991px) {
+    .promo {
+        padding: 20px 50px;
+    }
+    .advantages {
+        &_items {
+            display: block;
+            padding: 0 150px;
+        }
+        &__inf {
+            width: auto;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .promo {
+        .header__official {
+            display: none;
+        }
+        &_button_container {
+            text-align: center;
+        }
+        &_wrapper {
+            align-items: center;
+        }
+    }
+    
+}
+
+@media (max-width:575px) {
+    .promo {
+        padding: 25px;
+    }
+    .advantages {
+        &__text {
+            padding: 0;
+        }
+    }
+}
