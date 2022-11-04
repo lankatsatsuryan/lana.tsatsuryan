@@ -51,5 +51,9 @@
     }
     a {
         color: #FFFFFF;
+        &:hover {
+            color: $second-color;
+            transition: 0.5s all;
+        }
     }
 }

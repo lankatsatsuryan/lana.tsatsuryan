@@ -25,6 +25,15 @@
             justify-content: center;
         } 
     }
+    .catalog {
+        padding: 0 150px;
+        &__content {
+            justify-content: center;
+        }
+    }
+    .comments {
+        padding: 85px;
+    }
 }
 
 @media (max-width:767px) {
@@ -37,6 +46,21 @@
         }
         &_wrapper {
             align-items: center;
+        }
+    }
+    .catalog {
+        padding: 0;
+        &__tabs {
+            margin-top: 25px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            li {
+                margin-top: 5px;
+            }
+        }
+        &__content {
+            justify-content: center;
         }
     }
     
@@ -58,6 +82,18 @@
         }
         &_descr {
             font-size: 17px;
+        }
+    }
+    .comments {
+        &_wrapper {
+            display: block;
+        }
+        &_name {
+            margin-top: 10px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
         }
     }
 }
