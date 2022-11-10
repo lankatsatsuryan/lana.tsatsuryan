@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <header class="header">
                 <a href="#" class="header__logo">
@@ -71,7 +72,7 @@
                 </div>
                 <div class="advantages__inf">
                     <div class="advantages_img">
-                        <div class="advantages_icons"><img src="icons/advantage/heart.png" alt="heart"></div>
+                        <div class="advantages_icons advantages_icons_animation"><img src="icons/advantage/heart.png" alt="heart"></div>
                     </div>
 
                     <div class="advantages__text">
@@ -102,9 +103,9 @@
             <div class="consultation_descr">Просто заполните форму заявки <br> и мы перезвоним вам в течении 10 минут
             </div>
             <div class="form_container">
-                <form class="feed-form" action="#">
+                <form class="feed-form" id="consultation-form" action="#" method="post">
                     <input name="name" required placeholder="Ваше имя" type="text">
-                    <input name="phone" required placeholder="Ваш телефон" type="number">
+                    <input name="phone" required placeholder="Ваш телефон">
                     <input name="email" required placeholder="Ваш E-mail" type="email">
                     <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
                 </form>
@@ -417,7 +418,7 @@
     <section class="comments">
         <div class="container">
             <div class="title title_comments">отзывы клиентов</div>
-            <div class="comments_wrapper">
+            <div class="comments_wrapper animate__animated animate__fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
                 <img src="img/photos/comment/photo_1.png" alt="" class="comments_icons">
                 <div class="comments_text">
                     <div class="comments_name">Ирина Иванченко <br> <span>2 полумарафона</span> </div>
@@ -430,7 +431,7 @@
                 </div>
             </div>
 
-            <div class="comments_wrapper">
+            <div class="comments_wrapper animate__animated animate__fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
                 <img src="img/photos/comment/photo_2.png" alt="" class="comments_icons">
                 <div class="comments_text">
                     <div class="comments_name">Иван Сёмочкин <br> <span>1 полумарафон</span> </div>
@@ -443,7 +444,7 @@
                 </div>
             </div>
 
-            <div class="comments_wrapper">
+            <div class="comments_wrapper animate__animated animate__fadeInUp wow" data-wow-duration="2s" data-wow-delay="1s">
                 <img src="img/photos/comment/photo_3.png" alt="" class="comments_icons">
                 <div class="comments_text">
                     <div class="comments_name">Юлия Дашкина <br> <span>2 полумарафона</span> </div>
@@ -481,9 +482,9 @@
             <div class="modal__close">&times;</div>
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
-            <form class="feed-form feed-form_small" action="#">
+            <form class="feed-form feed-form_small" action="#" method="post">
                 <input name="name" required placeholder="Ваше имя" type="text">
-                <input name="phone" required placeholder="Ваш телефон" type="number">
+                <input name="phone" required placeholder="Ваш телефон">
                 <input name="email" required placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
             </form> 
@@ -493,9 +494,9 @@
             <div class="modal__close">&times;</div>
             <div class="modal__subtitle">Ваш заказ:</div>
             <div class="modal__descr">Пульсометр Polar FT1</div>
-            <form class="feed-form feed-form_small" action="#">
+            <form class="feed-form feed-form_small" action="#" method="post">
                 <input name="name" required placeholder="Ваше имя" type="text">
-                <input name="phone" required placeholder="Ваш телефон" type="number">
+                <input name="phone" required placeholder="Ваш телефон">
                 <input name="email" required placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">Купить</button>
             </form> 
@@ -511,7 +512,14 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
+    
+    <a class="arrow_up" href="#up">
+        <img src="icons/arrow-up-solid.svg" alt="up">
+    </a>
 </body>
 
 </html>

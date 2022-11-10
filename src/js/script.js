@@ -60,25 +60,123 @@ $(document).ready(function () {
       })
     });
   };
-  
+
   toggleSlide('.catalog-item_link');
   toggleSlide('.catalog-item__back');
 
   //modal
-  $('[data-modal=consultation]').on('click', function() {
+  $('[data-modal=consultation]').on('click', function () {
     $('.overlay, #consultation').fadeIn('slow');
   });
-/*   $('.button_small').on('click', function() {
-    $('.overlay, #order').fadeIn('slow')
-  }); */
-  $('.button_small').each(function(i) {
-    $(this).on('click', function() {
+  /*   $('.button_small').on('click', function() {
+      $('.overlay, #order').fadeIn('slow')
+    }); */
+  $('.button_small').each(function (i) {
+    $(this).on('click', function () {
       $('.modal__descr').html($('.catalog-item__subtitle').eq(i).html());
       $('.overlay, #order').fadeIn('slow');
     })
   });
 
-  $('.modal__close').on('click', function() {
+  $('.modal__close').on('click', function () {
     $('.overlay, #consultation, #order, #thanks').fadeOut('slow')
   })
+
+  /*  $('#consultation-form').validate();
+   $('#consultation form').validate({
+     rules: {
+       name: {
+         required: true,
+         minlength: 2
+       },
+       phone: "required",
+       email: {
+         reqiured: true,
+         email: true
+       }},
+       messages: {
+         name: {
+           required: "Введите имя",
+           minlength: jQuery.validator.format("Введите {0} символа")
+         },
+         phone: "Введите номер телефона",
+         email: {
+           required: "Введите почту",
+           email: "Неправильно введен адрес почты"
+         }
+       } 
+   });
+   $('#order form').validate(); */
+
+  function valideForms(form) {
+    $(form).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2
+        },
+        phone: "required",
+        email: {
+          reqiured: true,
+          email: true
+        }
+      },
+      messages: {
+        name: {
+          required: "Введите имя",
+          minlength: jQuery.validator.format("Введите {0} символа")
+        },
+        phone: "Введите номер телефона",
+        email: {
+          required: "Введите почту",
+          email: "Неправильно введен адрес почты"
+        }
+      }
+    })
+  }
+  valideForms('#consultation-form');
+  valideForms('#consultation form');
+  valideForms('#order form');
+
+  $('input[name=phone]').mask("+7(999) 999-9999")
+
+
+  //next?
+
+  $('form').submit(function (e) {
+    e.preventDefault();
+
+
+    /* 
+        if(!$(this).valid()) {
+          return;
+        } */
+
+    $.ajax({
+      type: "POST",
+      url: "http://lana.local/send_mail.php",
+      data: $(this).serialize()
+    }).done(function () {
+      $(this).find("input").val("");
+
+      $(this).trigger('reset');
+    });
+    return false;
+  });
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1600) {
+      $('.arrow_up').fadeIn();
+    } else {
+      $('.arrow_up').fadeOut();
+    }
+  })
+
+  $("a[href^='#']").click(function () {
+    const _href = $(this).attr("href");
+    $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+    return false;
+  });
+
+  new WOW().init();
 });

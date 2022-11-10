@@ -33,4 +33,15 @@
         text-decoration-line: underline;
         color: #FF0000;
     }
+    &_icons {
+        &_animation {
+            animation-name: heartbeat;
+            animation-duration: 1.5s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+    }
 }
